@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevLab is your personal web development practice dashboard.">
+  <title>DevLab — Build Something Great</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark">&lt;/&gt;</span> DevLab</a>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#tasks">My tasks</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="theme-toggle" class="icon-button" type="button"
+      aria-label="Switch colour theme">☾</button>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR DEVELOPMENT SPACE</p>
+      <h1>Dream it. <span>Build it.</span></h1>
+      <p class="hero-copy">
+        A small step every day can turn an idea into something real.
+        Track your progress and keep building.
+      </p>
+      <a class="primary-button" href="#tasks">Explore my workspace ↗</a>
+    </section>
+
+    <section id="dashboard" class="stats-grid" aria-label="Your statistics">
+      <article class="stat-card">
+        <p class="stat-label">Total tasks</p>
+        <p class="stat-number" id="total-count">3</p>
+        <p class="stat-note">Things to work on</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-label">Completed</p>
+        <p class="stat-number" id="completed-count">0</p>
+        <p class="stat-note">Wins, big and small</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-label">Progress</p>
+        <p class="stat-number" id="progress-number">0%</p>
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="tasks" class="workspace">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STAY CONSISTENT</p>
+          <h2>My learning tasks</h2>
+        </div>
+        <span class="live-label"><span></span> Your workspace</span>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">New task</label>
+        <input id="task-input" type="text" maxlength="100"
+          placeholder="What will you learn today?" required>
+        <button class="primary-button" type="submit">+ Add task</button>
+      </form>
+
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-message" class="empty-message" hidden>
+        All clear! Add a task to get started.
+      </p>
+      <button id="clear-completed" class="text-button" type="button">
+        Clear completed tasks
+      </button>
+    </section>
+
+    <section class="quote-card">
+      <div class="quote-icon">✳</div>
+      <div>
+        <p class="eyebrow">A REMINDER FOR TODAY</p>
+        <h2>Progress over perfection.</h2>
+        <p>You don't need to know everything to start. You need to start to learn.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <p class="eyebrow">SAY HELLO</p>
+      <h2>What's on your mind?</h2>
+      <p>Try the demo contact form. It validates your input locally.</p>
+      <form id="contact-form" class="contact-form">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" maxlength="80"
+          placeholder="Enter your name" required>
+
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" maxlength="254"
+          placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" maxlength="1000"
+          placeholder="Write something..." required></textarea>
+
+        <button class="primary-button" type="submit">Test form →</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home"><span class="brand-mark">&lt;/&gt;</span> DevLab</a>
+    <p>Built while learning, one line at a time.</p>
+    <p>© <span id="year"></span> DevLab</p>
+  </footer>
+</body>
+</html>
